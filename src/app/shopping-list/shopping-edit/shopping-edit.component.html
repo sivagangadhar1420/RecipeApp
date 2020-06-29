@@ -1,0 +1,59 @@
+<!--TwoWayData_Binding  
+  
+  <div class="row">
+    <div class="col-md-12"><div class="row">
+    <div class="col-md-12">
+      <form>
+<div class="row" id="n">
+            <div class="col-md-4 form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" [(ngModel)]="newShoppingName">
+        </div>
+    <div class="col-md-3 form-group">
+        <label for="amount">Amount</label>
+        <input type="number" class="form-control" id="amount" [(ngModel)]="newShoppingAmount" >
+    </div>
+    </div>
+
+    <div class="row" id="r">
+        <div class="col-xs-12">
+            <button class="btn btn-success mr-2 " type="submit" (click)="OnAddShopping()">ADD</button>
+            <button class="btn btn-danger mr-2" type="submit" (click)="OnDeleteShopping()">DELETE</button>
+            <button class="btn btn-info " type="submit" (click)="OnClear()">CLEAR</button>
+        <p>{{newShoppingName}} {{newShoppingAmount}}</p>  
+
+        </div>
+    </div>
+</form> 
+</div>
+</div>  -->
+
+<!--Local_Reference   -->
+<div class="row">
+        <div class="col-md-12">
+<div class="row">
+        <div class="col-md-12">
+          <form (ngSubmit)="OnAdditems(f)" #f="ngForm">
+    <div class="row" id="n">
+                <div class="col-md-4 form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name"  name="name" class="form-control" ngModel required>
+            </div>
+        <div class="col-md-3 form-group">
+            <label for="amount">Amount</label>
+            <input type="number" class="form-control" id="amount" name="amount" ngModel pattern="^[0-9]+[1-9]*$" required  >
+        </div>
+        </div>
+    
+        <div class="row" id="r">
+            <div class="col-xs-12">
+                <button class="btn btn-success mr-2 " type="submit" [disabled]="!f.valid">{{ editMode ? 'Update' : 'Add'}}</button>
+                <!--this process is viewchild Eventemitter element reference  <button class="btn btn-success mr-2 " type="submit" (click)="onAddShopping()">ADD</button>  -->
+               <button class="btn btn-danger mr-2" type="button" (click)="OnDelete()" *ngIf="editMode">DELETE</button> 
+                <button class="btn btn-info " type="button" (click)="OnClear()" >CLEAR</button>
+            </div>
+        </div>
+    </form> 
+    </div>
+    </div> 
+    

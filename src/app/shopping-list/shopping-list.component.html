@@ -1,0 +1,26 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-12">
+<app-shopping-edit></app-shopping-edit>
+<br>
+<button class="btn btn-danger " type="submit" (click)="OnDelete()">Delete</button>
+<button class="btn btn-info " type="submit" (click)="OnClear()">Clear</button>
+</div></div>
+</div>
+
+<hr>
+<ul class="list-group">
+    <li class="list-group-item">
+<a class="list-group-item"
+        *ngFor="let ingredient of ingredients ; let i=index" 
+        (click)="OnEditing(i)" style="cursor: pointer;">
+   {{ingredient.names}} ({{ingredient.amount}})
+   
+    
+
+</a></li></ul>
+   
+    
+
+
+   

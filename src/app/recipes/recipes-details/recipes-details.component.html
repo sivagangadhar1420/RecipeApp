@@ -1,0 +1,88 @@
+<div class="container">
+ <div class="row">
+    <div class="col-xs-12">
+        <img
+         [src]="recipedetail.imagePath" 
+         alt="{{ recipedetail.name }}" 
+         class="img-responsive" 
+         style="height:260px; cursor: pointer;"> 
+    </div></div>
+    <div class="row" styl="cursor:pointer">
+        <div class="col-xs-12">
+                    <h1>{{recipedetail.name}}</h1>
+            </div></div>
+            <div class="row">
+                <div class="col-xs-12"> 
+                  <div class="dropdown">
+                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" >
+                      SEARCH FOR ITEMS
+                    </button>
+                    <ul class="dropdown-menu">
+                     <li class="dropdown-item" style="cursor:pointer"><a class="dropdown-link" (click)="OnAddShoppingList()" >To_Shopping_List</a></li>
+                   <li class="dropdown-item" style="cursor:pointer"><a class="dropdown-link" (click)="ToEditlist()" >ToEdit</a></li>
+                     <li class="dropdown-item" style="cursor:pointer"><a class="dropdown-link" >RecipeList</a></li>
+                    </ul>
+                  </div>
+                    </div>
+                  </div>
+                  
+    <div class="row">    
+        <div class="col-xs-12">{{ recipedetail.name}} </div></div><br>
+            <ul class="list-group ">
+            <li class="list-group-item" style="cursor: pointer;"
+                       
+               *ngFor="let put of recipedetail.ingredients" > {{ put.names}} - {{ put.amount}} </li>
+         </ul>
+        </div>
+
+ <!-- <button class="btn btn-danger dropdown-toggle" data-toggl="dropdown" (click)="sclick()">Manage Recipe </button>   <div class="dropdown"> -->
+  <!--<div class="dropdown">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      Dropdown button
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Link 1</a></li>
+      <li> <a class="dropdown-item" href="#">Link 2</a></li>
+     <li> <a class="dropdown-item" href="#">Link 3</a></li>
+    </ul>
+  </div>
+</div> -->
+
+
+<!--<hr>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/posts" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-target="#my-target">
+          Dropdown
+        </a>
+        <div id="my-target" class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>   (click)="sclicks()"
+-->
